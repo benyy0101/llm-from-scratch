@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Model weights & offline transfer staging (too large for git)
+staging/
+models/
+*.gguf
+*.safetensors
+*.bin
+
+# Vector DB local data
+chroma_db/
+*.sqlite3
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
