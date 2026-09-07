@@ -5,8 +5,8 @@ __pycache__/
 venv/
 
 # Model weights & offline transfer staging (too large for git)
-staging/
-models/
+/staging/
+/models/
 *.gguf
 *.safetensors
 *.bin
@@ -19,3 +19,4 @@ chroma_db/
 .DS_Store
 Thumbs.db
 .vscode/
+.obsidian/
