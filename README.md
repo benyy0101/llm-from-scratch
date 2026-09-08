@@ -10,6 +10,7 @@ LLM 사전지식이 없는 상태에서 시작해, 폐쇄망(air-gapped network)
 |---|---|
 | [docs/01-roadmap.md](docs/01-roadmap.md) | 폐쇄망 LLM 구축 가이드 — 기초 개념, 실제 기업/기관 운영 사례, 표준 아키텍처, 0~7단계 학습 로드맵, 서빙 엔진·모델·하드웨어 비교표, 반입 절차 체크리스트 |
 | [docs/02-serving-theory.md](docs/02-serving-theory.md) | 서빙 이론 노트 — Prefill/Decode, KV 캐시, 배칭, PagedAttention, 병렬화, 양자화가 서빙 속도에 미치는 영향, 전통 서버 서빙과의 차이 |
+| [docs/구축기/](docs/구축기/README.md) | 가상의 금융권 시나리오(A저축은행, V100×3)로 쓰는 실전 구축기 — 개념이 아니라 "그래서 실제로 뭘 설치·설정하는가"에 집중. 회차별 진행 상황은 인덱스 참고 |
 
 ## vault/ — 옵시디언 제텔카스텐 vault
 

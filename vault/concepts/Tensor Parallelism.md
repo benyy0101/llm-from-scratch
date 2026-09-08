@@ -8,3 +8,6 @@ tags: [concept, serving, parallelism]
 
 ## 관련
 - [[Pipeline Parallelism]] — 함께 쓰이는 다른 병렬화 전략
+
+## 실전 사례
+- [EP08. vLLM 배포 — V100 3장 (구축기)](../../docs/구축기/EP08-vLLM-배포-V100-3장.md) — `--tensor-parallel-size 3`으로 V100 3장에 32B 모델을 실제로 나눠 올린 사례
