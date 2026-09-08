@@ -1,5 +1,7 @@
 ---
-tags: [tool, engine]
+tags:
+  - tool
+  - engine
 ---
 
 # vLLM
