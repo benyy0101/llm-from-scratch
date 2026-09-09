@@ -1,19 +1,37 @@
 ---
-tags: [model, embedding]
+tags: [model, embedding, rag]
 ---
 
 # BGE-M3
 
-중국 BAAI(북경 인공지능 아카데미)가 공개한 다국어 [[임베딩과 벡터DB|임베딩]] 전용 모델입니다. [[LLM]]처럼 답을 생성하지 않고, 텍스트를 "의미가 비슷한 텍스트를 찾기 위한 숫자 벡터"로 바꾸는 일만 합니다. 100개 이상의 언어를 지원하고 한국어 성능도 준수해 [[RAG]] 파이프라인의 임베딩 담당으로 자주 쓰입니다.
+BAAI가 공개한 다국어 검색 표현 모델입니다. [[RAG]]에서 문서·질문을 검색용 표현으로 바꾸며, 답변 문장을 생성하는 모델은 아닙니다.
 
-이름의 "M3"는 세 가지 특성을 겸비했다는 뜻입니다 — 문서 전체 의미로 검색하는 방식(dense)과 키워드 기반 검색(sparse)을 동시에 지원해서, 하이브리드 검색을 구현할 때 이 한 모델만으로 두 벡터를 다 뽑을 수 있습니다. 크기가 [[LLM]]만큼 크지 않아([[가중치]] 기준 수 GB) [[Ollama]]나 별도의 경량 서버로도 충분히 서빙됩니다.
+## M3의 의미
+
+- **Multi-Functionality** — dense·sparse·multi-vector 검색 지원
+- **Multi-Linguality** — 다국어 지원
+- **Multi-Granularity** — 다양한 길이의 입력 처리
+
+Dense는 밀집 벡터, sparse는 학습된 어휘별 가중치, multi-vector는 토큰별 표현을 사용합니다. **Sparse 출력은 BM25와 동일한 계산이 아닙니다.**
+
+## 모델 기능과 API 출력 구분
+
+모델이 지원해도 서빙 API가 모든 표현을 반환하는 것은 아닙니다. 구축기의 Ollama 임베딩 호출은 dense 벡터 예시이며, 그것만으로 sparse·multi-vector가 색인된 것은 아닙니다.
+
+[[BGE Reranker|bge-reranker-v2-m3]]는 질문·문서 쌍에 점수를 주는 별도 모델입니다. BGE-M3를 설치한 것으로 리랭커 준비까지 끝나지는 않습니다.
 
 ## 관련
-- [[임베딩과 벡터DB]] — BGE-M3가 담당하는 역할
-- [[RAG]] — BGE-M3를 실제로 쓰는 상위 패턴
-- [[Ollama]] — BGE-M3를 서빙하는 도구(Modelfile로 GGUF 등록)
-- [[Qdrant]] — BGE-M3가 만든 벡터가 실제로 저장되는 곳
+
+- [[임베딩과 벡터DB]] — dense 표현의 저장·검색
+- [[하이브리드 검색]] — 여러 검색 표현 결합
+- [[Late Interaction]] — 토큰별 표현 비교
+- [[BGE Reranker]] — 후보 관련성 평가용 모델
+- [[RAG 평가]] — 한국어 사내 문서 성능은 별도 검증 필요
 
 ## 실전 사례
-- [EP04. 컨테이너 이미지 & 모델 다운로드](../../docs/구축기/EP04-컨테이너-이미지-모델-다운로드.md) · [EP09. Ollama 폐쇄망 설치](../../docs/구축기/EP09-Ollama-폐쇄망-설치.md) (구축기) — BGE-M3를 반입해 Ollama에 Modelfile로 등록한 과정
-- [EP15. 폐쇄망 RAG 구축 ①](../../docs/구축기/EP15-폐쇄망-RAG-구축-1.md) — BGE-M3로 실제 문서를 임베딩해 Qdrant에 저장한 과정
+
+[EP15](../../docs/구축기/EP15-폐쇄망-RAG-구축-1.md) — 임베딩을 Qdrant에 저장하는 가상 구축 예시
+
+## 출처
+
+[BGE-M3 공식 모델 카드](https://huggingface.co/BAAI/bge-m3)

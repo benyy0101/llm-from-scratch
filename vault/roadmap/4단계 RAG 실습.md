@@ -11,6 +11,10 @@ pip install langchain langchain-community chromadb pypdf
 ollama pull nomic-embed-text
 ```
 
+## 개념 심화
+
+[[RAG와 리랭킹 MOC]]를 따라 [[Precision과 Recall]] → [[하이브리드 검색]] → [[리랭킹]] → [[RAG 평가]]를 읽습니다. 기본 파이프라인을 만든 뒤 같은 질문과 근거 라벨로 검색·정렬 효과를 비교합니다.
+
 ## 이전 / 다음
 ← [[3단계 모델·양자화 비교]] · → [[5단계 프로덕션 서빙]]
 

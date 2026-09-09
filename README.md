@@ -19,13 +19,15 @@ LLM 사전지식이 없는 상태에서 시작해, 폐쇄망(air-gapped network)
 | 폴더 | 내용 |
 |---|---|
 | [vault/MOC.md](vault/MOC.md) | 전체 지도(Map of Content) — 여기서 시작 |
-| `vault/concepts/` | 원자 개념 노트 23개 (LLM, 토큰, 양자화, KV 캐시, PagedAttention, 전통 서버 서빙과의 차이 등) |
+| `vault/concepts/` | LLM·서빙·RAG·리랭킹 개념 노트 |
 | `vault/engines/` | 서빙 엔진/도구 노트 11개 (Ollama, vLLM, Open WebUI, NVIDIA NIM 등) |
 | `vault/models/` | 모델 노트 8개 (Qwen, EXAONE, HyperCLOVA X, Midm 2.0 등) |
 | `vault/cases/` | 실제 운영 사례 노트 9개 (한국은행, 삼성SDS, IBM watsonx.ai 등) |
 | `vault/roadmap/` | 0~7단계 로드맵 노트 8개, 각각 이전/다음 단계로 링크 |
 
 각 노트는 짧은 정의 + `## 관련` 섹션으로 구성되어 있고, 다른 노트로의 링크가 곧 "왜 이게 다음으로 알아야 할 개념인가"를 나타냅니다. 원문(마케팅 수준 공개 vs 공식 문서 기반)의 신뢰도 표시(`[확인됨]`/`[참고용]`)는 사례 노트에 그대로 남겨뒀습니다.
+
+RAG 심화는 [RAG와 리랭킹 학습 지도](vault/RAG와%20리랭킹%20MOC.md)에서 시작합니다. 검색 재현율, 하이브리드 검색, 리랭킹 구조, 컨텍스트 구성과 평가를 개념별로 연결했습니다.
 
 ## 학습 순서
 

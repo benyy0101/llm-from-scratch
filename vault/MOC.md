@@ -16,6 +16,15 @@ tags: [moc]
 - [[폐쇄망]] → [[표준 아키텍처]] · [[체크섬]]
 - [[GPU]] → [[VRAM]] → [[GPU 선택]]
 
+## RAG와 리랭킹 딥다이브
+
+[[RAG와 리랭킹 MOC]]에서 시작합니다.
+
+- [[Precision과 Recall]] → [[하이브리드 검색]] → [[RRF]] → [[리랭킹]]
+- [[청킹과 문서 구조]] · [[쿼리 재작성과 확장]] · [[컨텍스트 구성]]
+- [[Bi-Encoder와 Cross-Encoder]] · [[Late Interaction]] · [[ANN 검색과 검색 재현율]]
+- [[RAG 평가]] · [[BGE Reranker]]
+
 ## 서빙 이론
 - [[Query·Key·Value]] → [[Multi-Head Attention]] · [[Causal Masking]]
 - [[Prefill과 Decode]]
