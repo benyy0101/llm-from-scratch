@@ -324,6 +324,21 @@ docker load -i ./vllm-image.tar
 | 32B | 20~24GB | 34~38GB | 64~70GB |
 | 70B | 40~48GB | 70~78GB | 140~150GB |
 
+### GPU 세대별 양자화 포맷 호환표
+
+같은 양자화라도 GPU 세대(compute capability)에 따라 쓸 수 있는 포맷이 달라집니다. 특히 AWQ는 Volta(V100) 세대에서 아예 동작하지 않는 경우가 많아, GPU를 먼저 정하고 그 GPU가 지원하는 포맷 범위 안에서 양자화 전략을 짜는 순서가 안전합니다.
+
+| 세대 | Compute Capability | 대표 GPU | GGUF | GPTQ | AWQ |
+|---|---|---|---|---|---|
+| Volta | 7.0 | V100 | ✅ | ✅ | ❌ |
+| Turing | 7.5 | RTX 2080, T4 | ✅ | ✅ | ✅ |
+| Ampere | 8.0 / 8.6 | A100, RTX 3090 | ✅ | ✅ | ✅ |
+| Ada Lovelace | 8.9 | RTX 4090, L40 | ✅ | ✅ | ✅ |
+| Hopper | 9.0 | H100 | ✅ | ✅ | ✅ |
+| Blackwell | 10.0 / 12.x | B200, RTX 5090 | ✅ | ✅ | ✅ |
+
+GGUF·GPTQ는 세대와 무관하게 대체로 동작하고, AWQ만 Volta(7.0)에서 유일하게 빠집니다. V100급 구형 데이터센터 GPU를 재활용하는 구축이라면 이 한 줄만 기억하면 됩니다 — "AWQ가 되는지"만 확인하고, 안 되면 GPTQ로 준비하세요.
+
 ### 학습용 vs 소규모 프로덕션
 
 - **학습·실습 머신** — RTX 4090/3090 (24GB) 1장이면 7B~13B는 여유, 32B도 Q4로는 빠듯하게 가능. 별도 클라우드 요금 없이 반복 실험하기 좋습니다.
@@ -368,6 +383,8 @@ docker load -i ./vllm-image.tar
 - [freeCodeCamp — Qwen3 + Ollama로 나만의 로컬 AI 만들기](https://www.freecodecamp.org/news/build-a-local-ai/) — 1단계와 거의 동일한 실습을 다른 각도로 설명
 - [DeepLearning.AI 단기 강좌](https://learn.deeplearning.ai/) — "Open Source Models with Hugging Face", "Fast & Efficient LLM Inference with vLLM" 등 5단계 이후 심화용
 - [폐쇄망 LLM 구축기 시리즈 (hoft.tistory.com)](https://hoft.tistory.com/entry/airgap-llm-survival-ep01-why-local-llm) — 기초/인터넷망 준비/폐쇄망 설치/실전 운영/고급 활용 5단계 18편으로 기획된 국내 실전 구축기. 이 글 작성 시점엔 1편만 발행돼 있었지만, GPU 선택(V100 포함)·LiteLLM 게이트웨이·RHEL Podman·Continue.dev 활용까지 다루는 구성이 알차서 `vault/concepts/GPU 선택.md`·`vault/engines/LiteLLM.md`·`vault/engines/Podman.md`·`vault/engines/Continue.dev.md` 노트를 이 인덱스를 참고해 추가했습니다.
+- [구축기 시리즈 (자체 집필판)](구축기/README.md) — 위 목차를 실제 "A저축은행" 가상 시나리오에 적용해 우리가 직접 이어 쓴 EP02~18. GPU 선택부터 RAG·코딩 어시스턴트까지 실전 삽질을 그대로 기록.
+- [03-트러블슈팅-딥리서치.md](03-트러블슈팅-딥리서치.md) — 구축기 시리즈가 다루지 않은 추가 삽질 사례를 GitHub 이슈·공식 문서·기술 블로그에서 딥 리서치로 모은 보충 자료. Podman rootless GPU, V100 양자화 호환성, vLLM 멀티GPU, LiteLLM, Ollama, Open WebUI LDAP, Qdrant/한국어 RAG, 에어갭 반입까지 8개 주제.
 
 ### 이 문서의 조사 방법과 한계
 

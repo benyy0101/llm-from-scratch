@@ -4,14 +4,31 @@
 
 이번 편이 이 시리즈에서 제일 오래 걸렸어요. EP03에서 예고했던 V100 관련 이슈들이 여기서 한꺼번에 터졌거든요. 결론부터 정리하면 — GPU를 rootless로 물리는 건 결국 포기하고, **vLLM 컨테이너 하나만 rootful(root 권한)로 예외 운영**하기로 했어요. 이 결정까지 어떤 삽질을 거쳤는지 순서대로 적어볼게요.
 
+## 🔧 그전에 — GPU 드라이버부터 깔았어요
+
+컨테이너 얘기를 하기 전에 더 기본적인 게 있었어요. **서버에 NVIDIA 드라이버 자체가 안 깔려 있으면 컨테이너고 뭐고 GPU를 아예 인식을 못 해요.** EP04에서 받아둔 드라이버·CUDA 툴킷 RPM과 로컬 저장소 메타데이터를 여기서 씁니다.
+
+```bash
+# EP04에서 받아온 RPM 묶음을 서버로 옮긴 뒤, 로컬 저장소로 등록
+sudo cp -r ./import/packages/nvidia /opt/repos/nvidia-local
+sudo dnf config-manager --add-repo file:///opt/repos/nvidia-local
+
+sudo dnf install -y nvidia-driver cuda-toolkit
+sudo reboot   # 드라이버 커널 모듈 적용을 위해 재부팅 필요
+
+nvidia-smi   # 재부팅 후 GPU 3장이 잘 보이는지 확인
+```
+
+인터넷이 됐다면 그냥 `dnf install -y nvidia-driver`로 끝났을 텐데, 폐쇄망이라 EP04에서 미리 받아둔 RPM들을 **로컬 저장소로 등록**하는 절차가 하나 더 필요했어요. 이걸 깜빡하면 다음 단계(nvidia-container-toolkit 설치)에서 바로 막혀요.
+
 ## ⚠️ 삽질 2 — rootless Podman에서 GPU가 안 잡혀요
 
 EP07에서 만든 rootless 환경 그대로 vLLM 컨테이너를 띄웠더니 GPU를 아예 못 찾더라구요. 알아보니 NVIDIA의 **CDI(Container Device Interface)** 방식으로 GPU를 전달해야 하는데, 이게 privileged(root) 컨테이너에서는 잘 되는데 rootless에서는 아직 버그가 많다고 하더라구요.
 
-일단 정석대로 CDI 스펙부터 만들어봤어요.
+일단 정석대로 CDI 스펙부터 만들어봤어요. `nvidia-container-toolkit`도 방금 등록한 로컬 저장소에 이미 들어있어서, 여기서도 인터넷 없이 그대로 설치됩니다.
 
 ```bash
-sudo dnf install -y nvidia-container-toolkit
+sudo dnf install -y nvidia-container-toolkit   # 위에서 등록한 로컬 저장소에서 설치됨
 sudo nvidia-ctk cdi generate --output=/etc/cdi/nvidia.yaml
 nvidia-ctk cdi list   # GPU 3장이 잘 보이는지 확인
 ```
@@ -69,7 +86,7 @@ curl http://localhost:8000/v1/chat/completions \
 ---
 
 📌 **EP.08 한 줄 요약**
-rootless Podman에서 GPU가 안정적으로 안 잡혀서, vLLM 컨테이너만 예외적으로 rootful 운영하기로 하고 보완 통제를 문서화했다. Tensor Parallelism으로 V100 3장을 묶어 EP02 목표(첫 토큰 3초, 동시 15명)를 여유 있게 만족시켰다.
+NVIDIA 드라이버·CUDA를 EP04에서 받아둔 RPM으로 로컬 저장소를 등록해 오프라인 설치했다. rootless Podman에서 GPU가 안정적으로 안 잡혀서, vLLM 컨테이너만 예외적으로 rootful 운영하기로 하고 보완 통제를 문서화했다. Tensor Parallelism으로 V100 3장을 묶어 EP02 목표(첫 토큰 3초, 동시 15명)를 여유 있게 만족시켰다.
 
 **다음 편**: [EP09. Ollama 폐쇄망 설치](EP09-Ollama-폐쇄망-설치.md)
 

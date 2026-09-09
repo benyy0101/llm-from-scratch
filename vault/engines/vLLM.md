@@ -10,6 +10,7 @@ tags:
 
 ## 관련
 - [[PagedAttention]] — vLLM의 핵심 메모리 관리 기법
+- [[모델과 엔진]] — vLLM은 모델이 아니라 엔진(소프트웨어)이라는 구분
 - [[Continuous Batching]] — vLLM의 핵심 스케줄링 기법
 - [[Ollama]] — 학습 단계에서 쓰다가 넘어오는 이전 도구
 - [[5단계 프로덕션 서빙]] — vLLM을 실제로 붙이는 로드맵 단계

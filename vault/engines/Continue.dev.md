@@ -12,6 +12,7 @@ VS Code·JetBrains용 오픈소스 AI 코딩 어시스턴트입니다. GitHub Co
 ## 관련
 - [[Ollama]] · [[vLLM]] — Continue.dev가 붙는 백엔드
 - [[폐쇄망]] — 이 조합이 특히 의미 있는 배포 환경
+- [[Cline]] — 자율 에이전트 성격이 더 강한 대안, 승인 흐름이 촘촘함
 
 ## 실전 사례
 - [EP17. Continue.dev 코딩 어시스턴트 (구축기)](../../docs/구축기/EP17-Continue.dev-코딩-어시스턴트.md) — 이미 VRAM이 꽉 찬 상황에서 자동완성용 소형 모델을 추가로 얹은 실제 절충
