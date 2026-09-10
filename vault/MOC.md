@@ -91,9 +91,20 @@ tags: [moc]
 - [[전통 서버 서빙과의 차이]]
 - [[모델 서빙과 서비스 배포]] → [[멀티모델 서빙]]
 
+## 관측성·운영·보안 게이트웨이
+[[모델 서빙과 서비스 배포]] 이후 실제 운영에서 붙는 계층입니다. [EP19](../docs/구축기-시즌2-전사확대/EP19-컴플라이언스-프레임워크-매핑.md)·[EP20](../docs/구축기-시즌2-전사확대/EP20-AI-게이트웨이-보안-강화.md)에서 다룬 전사 확대 단계의 컴플라이언스·게이트웨이 강화가 이 섹션의 배경입니다.
+- [[관측성]] → [[상관관계 ID]] → [[분산 트레이싱]] · [[로그 집계]]
+- [[Prometheus]] → [[Alertmanager]] · [[DCGM Exporter]]
+- [[Grafana]] · [[Loki]] · [[OpenTelemetry]] — 시각화·로그·계측 표준
+- [[Goodput]] — SLO를 만족한 요청만 세는 처리량 지표
+- [[카오스 엔지니어링]] — 장애를 주입해 복원력을 사전 검증
+- [[PII 마스킹]] → [[Presidio]] · [[프롬프트 인젝션]] — 게이트웨이 계층 보안
+- [[모델 라우팅]] · [[시맨틱 캐싱]] — 게이트웨이 계층 비용·성능 최적화
+- [[고영향 AI와 인간개입]] · [[감사 로그와 WORM]] — 금융·공공 폐쇄망 컴플라이언스 요구
+
 ## 서빙 엔진 / 도구
 - [[Ollama]] · [[vLLM]] · [[LM Studio]] · [[GPT4All]] · [[Open WebUI]] · [[llama.cpp]] · [[SGLang]] · [[TensorRT-LLM]] · [[Hugging Face TGI]] · [[LocalAI]] · [[NVIDIA NIM]]
-- [[LiteLLM]] (API 게이트웨이) · [[nginx]] (리버스 프록시) · [[Podman]] (컨테이너 런타임) · [[Continue.dev]] · [[Cline]] · [[Hermes Agent]] (코딩 어시스턴트 활용 사례) · [[Qdrant]] (벡터DB) · [[RHEL 9]] (운영체제)
+- [[LiteLLM]] (API 게이트웨이) · [[nginx]] (리버스 프록시) · [[Podman]] (컨테이너 런타임) · [[Continue.dev]] · [[Cline]] · [[Hermes Agent]] (코딩 어시스턴트 활용 사례) · [[faster-whisper]] (Hermes의 로컬 STT) · [[Qdrant]] (벡터DB) · [[RHEL 9]] (운영체제)
 
 ## 모델
 - [[Qwen]] · [[Llama (모델)]] · [[Gemma]] · [[Mistral]] · [[EXAONE]] · [[HyperCLOVA X]] · [[SOLAR]] · [[Midm 2.0]]

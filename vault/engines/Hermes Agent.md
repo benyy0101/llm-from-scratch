@@ -43,6 +43,7 @@ Hermes는 스스로를 "개인 AI 운영체제(personal AI OS)"로 소개합니�
 기능이 많을수록 반입·보안 검토 범위가 넓어진다는 원칙([[함수 호출 (Tool Use)#보안 — 협상 불가능한 다섯 원칙|함수 호출의 보안 원칙]] 참고)이 Hermes에는 특히 중요합니다. 코딩 어시스턴트가 목적이라면 Profiles의 코딩 프로필과 Kanban 정도만 켜고, Cron·Voice·Gateway·GEPA 같은 기능은 실제 필요가 확인되기 전까지는 꺼둔 최소 구성으로 시작하는 게 안전합니다. Voice Mode를 쓴다면 faster-whisper 모델 파일도 다른 임베딩 모델([[BGE-M3]] 등)과 마찬가지로 사전 반입 대상에 포함해야 합니다.
 
 ## 관련
+- [[faster-whisper]] — Voice Mode의 로컬 STT 엔진
 - [[Cline]] · [[Continue.dev]] — Hermes가 포함하는 "코딩 에이전트" 기능의 대안/부분집합
 - [[MCP (Model Context Protocol)]] — 도구를 표준화하는 프로토콜, ACP와 목적이 다름(ACP는 에이전트-에디터 간, MCP는 에이전트-도구 간)
 - [[에이전트 상태 관리 (LangGraph)]] — Hermes가 "완성품"으로 제공하는 것을 직접 조립해야 하는 프레임워크 쪽 대안
