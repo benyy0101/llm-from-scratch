@@ -383,7 +383,7 @@ GGUF·GPTQ는 세대와 무관하게 대체로 동작하고, AWQ만 Volta(7.0)�
 - [freeCodeCamp — Qwen3 + Ollama로 나만의 로컬 AI 만들기](https://www.freecodecamp.org/news/build-a-local-ai/) — 1단계와 거의 동일한 실습을 다른 각도로 설명
 - [DeepLearning.AI 단기 강좌](https://learn.deeplearning.ai/) — "Open Source Models with Hugging Face", "Fast & Efficient LLM Inference with vLLM" 등 5단계 이후 심화용
 - [폐쇄망 LLM 구축기 시리즈 (hoft.tistory.com)](https://hoft.tistory.com/entry/airgap-llm-survival-ep01-why-local-llm) — 기초/인터넷망 준비/폐쇄망 설치/실전 운영/고급 활용 5단계 18편으로 기획된 국내 실전 구축기. 이 글 작성 시점엔 1편만 발행돼 있었지만, GPU 선택(V100 포함)·LiteLLM 게이트웨이·RHEL Podman·Continue.dev 활용까지 다루는 구성이 알차서 `vault/concepts/GPU 선택.md`·`vault/engines/LiteLLM.md`·`vault/engines/Podman.md`·`vault/engines/Continue.dev.md` 노트를 이 인덱스를 참고해 추가했습니다.
-- [구축기 시리즈 (자체 집필판)](구축기/README.md) — 위 목차를 실제 "A저축은행" 가상 시나리오에 적용해 우리가 직접 이어 쓴 EP02~18. GPU 선택부터 RAG·코딩 어시스턴트까지 실전 삽질을 그대로 기록.
+- [구축기 시리즈 (자체 집필판)](구축기-v1.0/README.md) — 위 목차를 실제 "A저축은행" 가상 시나리오에 적용해 우리가 직접 이어 쓴 EP02~18. GPU 선택부터 RAG·코딩 어시스턴트까지 실전 삽질을 그대로 기록.
 - [03-트러블슈팅-딥리서치.md](03-트러블슈팅-딥리서치.md) — 구축기 시리즈가 다루지 않은 추가 삽질 사례를 GitHub 이슈·공식 문서·기술 블로그에서 딥 리서치로 모은 보충 자료. Podman rootless GPU, V100 양자화 호환성, vLLM 멀티GPU, LiteLLM, Ollama, Open WebUI LDAP, Qdrant/한국어 RAG, 에어갭 반입까지 8개 주제.
 
 ### 이 문서의 조사 방법과 한계

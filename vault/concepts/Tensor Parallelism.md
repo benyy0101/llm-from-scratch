@@ -30,4 +30,4 @@ tags: [concept, serving, parallelism]
 - [[옵티마이저 (SGD·Adam)]] — 학습 메모리의 가장 큰 비중을 차지하는 옵티마이저 상태의 정체
 
 ## 실전 사례
-- [EP08. vLLM 배포 — V100 3장 (구축기)](../../docs/구축기/EP08-vLLM-배포-V100-3장.md) — `--tensor-parallel-size 3`으로 V100 3장에 32B 모델을 실제로 나눠 올린 사례
+- [EP08. vLLM 배포 — V100 3장 (구축기)](../../docs/구축기-v1.0/EP08-vLLM-배포-V100-3장.md) — `--tensor-parallel-size 3`으로 V100 3장에 32B 모델을 실제로 나눠 올린 사례

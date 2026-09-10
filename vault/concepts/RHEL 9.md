@@ -20,5 +20,5 @@ Red Hat Enterprise Linux — Red Hat(현재 IBM 소속)이 만드는 기업용 �
 - [[WSL2]] — 물리 RHEL 9 서버가 없을 때, 같은 계열(AlmaLinux 9)로 실습을 재현하는 방법
 
 ## 실전 사례
-- [EP07. RHEL 9에서 Podman 컨테이너 운영](../../docs/구축기/EP07-RHEL9-Podman-컨테이너-운영.md) — 실제로 RHEL 9 서버 위에서 스택을 구성한 과정
+- [EP07. RHEL 9에서 Podman 컨테이너 운영](../../docs/구축기-v1.0/EP07-RHEL9-Podman-컨테이너-운영.md) — 실제로 RHEL 9 서버 위에서 스택을 구성한 과정
 - [05. GPU 없이 CPU로 구축기 스택 실습하기](../../docs/05-CPU-실습-환경-구축-트러블슈팅.md) — WSL2 위에 AlmaLinux 9(RHEL 9 계열)를 올려 EP07 절차를 그대로 재현한 실습 기록

@@ -30,7 +30,7 @@ Dense는 밀집 벡터, sparse는 학습된 어휘별 가중치, multi-vector는
 
 ## 실전 사례
 
-[EP15](../../docs/구축기/EP15-폐쇄망-RAG-구축-1.md) — 임베딩을 Qdrant에 저장하는 가상 구축 예시
+[EP15](../../docs/구축기-v1.0/EP15-폐쇄망-RAG-구축-1.md) — 임베딩을 Qdrant에 저장하는 가상 구축 예시
 
 ## 출처
 

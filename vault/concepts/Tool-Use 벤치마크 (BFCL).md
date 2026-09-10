@@ -5,7 +5,7 @@ aliases: ["BFCL", "Berkeley Function-Calling Leaderboard", "Tool-Use 벤치마�
 
 # Tool-Use 벤치마크 (BFCL)
 
-[[함수 호출 (Tool Use)]] 능력, 즉 모델이 도구를 얼마나 정확히 호출하는지를 정량 비교하는 사실상의 업계 표준 벤치마크가 **BFCL(Berkeley Function-Calling Leaderboard)**입니다. UC Berkeley가 만들었고, 단일 호출·병렬 호출·멀티턴 대화 속에서 언제 도구를 불러야 하고 언제 안 불러야 하는지까지 AST(추상 구문 트리) 방식으로 채점합니다.
+[[함수 호출 (Tool Use)]] 능력, 즉 모델이 도구를 얼마나 정확히 호출하는지를 정량 비교하는 사실상의 업계 표준 벤치마크가 **BFCL(Berkeley Function-Calling Leaderboard)**입니다. UC Berkeley가 만들었고, [[싱글턴과 멀티턴 (Tool Use)|단일 호출·병렬 호출·멀티턴 대화]] 속에서 언제 도구를 불러야 하고 언제 안 불러야 하는지까지 AST(추상 구문 트리) 방식으로 채점합니다.
 
 ## 왜 이 벤치마크가 중요한가
 
@@ -38,8 +38,9 @@ aliases: ["BFCL", "Berkeley Function-Calling Leaderboard", "Tool-Use 벤치마�
 
 ## 관련
 - [[함수 호출 (Tool Use)]] — 이 벤치마크가 측정하는 능력 자체
+- [[싱글턴과 멀티턴 (Tool Use)]] — 이 벤치마크가 채점을 나누는 두 난이도 축
 - [[Cline]] · [[Continue.dev]] — 이 정확도가 실제 체감 성능으로 이어지는 클라이언트
 - [[LLM 평가]] — 더 넓은 범주의 모델 평가 방법론
 
 ## 실전 사례
-- [EP20. 에이전트 심화 — Cline과 Tool-Use 벤치마크 (구축기)](../../docs/구축기/EP20-에이전트-심화-Cline-BFCL.md) — 반입 예정 모델로 BFCL 서브셋을 직접 돌려본 과정
+- [EP20. 에이전트 심화 — Cline과 Tool-Use 벤치마크 (구축기)](../../docs/구축기-v1.0/EP20-에이전트-심화-Cline-BFCL.md) — 반입 예정 모델로 BFCL 서브셋을 직접 돌려본 과정

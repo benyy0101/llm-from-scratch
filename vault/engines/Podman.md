@@ -31,6 +31,6 @@ rootless가 항상 매끄러운 건 아닙니다 — 특히 GPU를 컨테이너�
 - [[WSL2]] — GPU 없이 실습할 때 물리 RHEL 9 서버 대신 쓰는 환경
 
 ## 실전 사례
-- [EP07. RHEL 9에서 Podman 컨테이너 운영 (구축기)](../../docs/구축기/EP07-RHEL9-Podman-컨테이너-운영.md) — rootless + Quadlet으로 서비스를 등록한 과정
-- [EP08. vLLM 배포 — V100 3장 (구축기)](../../docs/구축기/EP08-vLLM-배포-V100-3장.md) — rootless GPU 패스스루가 불안정해 vLLM 컨테이너만 rootful로 예외 운영한 실제 판단
+- [EP07. RHEL 9에서 Podman 컨테이너 운영 (구축기)](../../docs/구축기-v1.0/EP07-RHEL9-Podman-컨테이너-운영.md) — rootless + Quadlet으로 서비스를 등록한 과정
+- [EP08. vLLM 배포 — V100 3장 (구축기)](../../docs/구축기-v1.0/EP08-vLLM-배포-V100-3장.md) — rootless GPU 패스스루가 불안정해 vLLM 컨테이너만 rootful로 예외 운영한 실제 판단
 - [05. GPU 없이 CPU로 구축기 스택 실습하기](../../docs/05-CPU-실습-환경-구축-트러블슈팅.md) — WSL2 위 AlmaLinux 9에 실제로 Podman을 설치하고 rootless 계정을 구성한 과정

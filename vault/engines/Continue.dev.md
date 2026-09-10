@@ -15,4 +15,4 @@ VS Code·JetBrains용 오픈소스 AI 코딩 어시스턴트입니다. GitHub Co
 - [[Cline]] — 자율 에이전트 성격이 더 강한 대안, 승인 흐름이 촘촘함
 
 ## 실전 사례
-- [EP17. Continue.dev 코딩 어시스턴트 (구축기)](../../docs/구축기/EP17-Continue.dev-코딩-어시스턴트.md) — 이미 VRAM이 꽉 찬 상황에서 자동완성용 소형 모델을 추가로 얹은 실제 절충
+- [EP17. Continue.dev 코딩 어시스턴트 (구축기)](../../docs/구축기-v1.0/EP17-Continue.dev-코딩-어시스턴트.md) — 이미 VRAM이 꽉 찬 상황에서 자동완성용 소형 모델을 추가로 얹은 실제 절충
