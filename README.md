@@ -10,19 +10,27 @@ LLM 사전지식이 없는 상태에서 시작해, 폐쇄망(air-gapped network)
 |---|---|
 | [docs/01-roadmap.md](docs/01-roadmap.md) | 폐쇄망 LLM 구축 가이드 — 기초 개념, 실제 기업/기관 운영 사례, 표준 아키텍처, 0~7단계 학습 로드맵, 서빙 엔진·모델·하드웨어 비교표, 반입 절차 체크리스트 |
 | [docs/02-serving-theory.md](docs/02-serving-theory.md) | 서빙 이론 노트 — Prefill/Decode, KV 캐시, 배칭, PagedAttention, 병렬화, 양자화가 서빙 속도에 미치는 영향, 전통 서버 서빙과의 차이 |
-| [docs/구축기-v1.0/](docs/구축기-v1.0/README.md) | 가상의 금융권 시나리오(A저축은행, V100×3)로 쓰는 실전 구축기 — 개념이 아니라 "그래서 실제로 뭘 설치·설정하는가"에 집중. 회차별 진행 상황은 인덱스 참고 |
+| [docs/03-트러블슈팅-딥리서치.md](docs/03-트러블슈팅-딥리서치.md) | 외부 사례 큐레이션 — 구축기 시리즈에서 겪은 것과 같은 컴포넌트의 실전 트러블슈팅 사례 모음 |
+| [docs/04-vault-이론-확장-핸드오프.md](docs/04-vault-이론-확장-핸드오프.md) | vault에 수학·고전 ML·딥러닝·트랜스포머 이론 레이어를 추가하기 위한 작업 지시서 (aiengineeringfromscratch.com 참고) |
+| [docs/05-CPU-실습-환경-구축-트러블슈팅.md](docs/05-CPU-실습-환경-구축-트러블슈팅.md) | GPU 없는 Windows 11 PC 한 대에서 구축기 스택을 직접 재현하며 겪은 1차 기록 |
+| [docs/06-에이전트-오케스트레이션-분석.md](docs/06-에이전트-오케스트레이션-분석.md) | 클로드 코드·Hermes Agent를 통해 본 에이전트 오케스트레이션 원리 분석 — 구축기 v2.0의 이론적 배경 |
+| [docs/구축기-v1.0/](docs/구축기-v1.0/README.md) | 가상의 금융권 시나리오(A저축은행, V100×3)로 쓰는 실전 구축기 EP02~20 — 개념이 아니라 "그래서 실제로 뭘 설치·설정하는가"에 집중 |
+| [docs/구축기-v1.1-전사확대/](docs/구축기-v1.1-전사확대/README.md) | v1.0 이후 전사 확대 심의 단계에서 생긴 컴플라이언스·게이트웨이 보안·시맨틱 캐싱·부하테스트 요구사항 EP19~22 |
+| [docs/구축기-v2.0/](docs/구축기-v2.0/README.md) | 가상의 대기업 시나리오(H전자 AI혁신센터, 독립 DGX H100×4)로 쓰는 멀티에이전트 오케스트레이션 구축기 EP01~13 |
 
 ## vault/ — 옵시디언 제텔카스텐 vault
 
-위 두 문서를 개념 단위로 쪼개 `[[위키링크]]`로 서로 연결한 노트 모음입니다. [Obsidian](https://obsidian.md)에서 `vault/` 폴더를 그대로 열면 그래프 뷰·백링크가 바로 동작합니다.
+위 문서들을 개념 단위로 쪼개 `[[위키링크]]`로 서로 연결한 노트 모음입니다. [Obsidian](https://obsidian.md)에서 `vault/` 폴더를 그대로 열면 그래프 뷰·백링크가 바로 동작합니다.
 
 | 폴더 | 내용 |
 |---|---|
 | [vault/MOC.md](vault/MOC.md) | 전체 지도(Map of Content) — 여기서 시작 |
-| `vault/concepts/` | LLM·서빙·RAG·리랭킹 개념 노트 |
-| `vault/engines/` | 서빙 엔진/도구 노트 11개 (Ollama, vLLM, Open WebUI, NVIDIA NIM 등) |
-| `vault/models/` | 모델 노트 8개 (Qwen, EXAONE, HyperCLOVA X, Midm 2.0 등) |
+| `vault/concepts/` | LLM·서빙·RAG·리랭킹·관측성·운영 개념 노트 106개 |
+| `vault/theory/` | 수학 기초·고전 ML·딥러닝·트랜스포머 이론 노트 46개 (aiengineeringfromscratch.com 참고해 새로 추가한 레이어) |
+| `vault/engines/` | 서빙 엔진/도구 노트 26개 (Ollama, vLLM, Open WebUI, NVIDIA NIM, LiteLLM 등) |
+| `vault/models/` | 모델 노트 10개 (Qwen, EXAONE, HyperCLOVA X, Midm 2.0 등) |
 | `vault/cases/` | 실제 운영 사례 노트 9개 (한국은행, 삼성SDS, IBM watsonx.ai 등) |
+| `vault/infra/` | Windows/WSL2 실습 인프라 노트 9개 (Hyper-V, WSL2, 가상 스위치 등) |
 | `vault/roadmap/` | 0~7단계 로드맵 노트 8개, 각각 이전/다음 단계로 링크 |
 
 각 노트는 짧은 정의 + `## 관련` 섹션으로 구성되어 있고, 다른 노트로의 링크가 곧 "왜 이게 다음으로 알아야 할 개념인가"를 나타냅니다. 원문(마케팅 수준 공개 vs 공식 문서 기반)의 신뢰도 표시(`[확인됨]`/`[참고용]`)는 사례 노트에 그대로 남겨뒀습니다.
@@ -40,6 +48,8 @@ RAG 심화는 [RAG와 리랭킹 학습 지도](vault/RAG와%20리랭킹%20MOC.md
 
 - [x] 폐쇄망 LLM 로드맵 초안 정리
 - [x] 서빙 이론 정리 (전통 서버 서빙과의 차이 포함)
-- [x] vault/ 옵시디언 제텔카스텐 노트 61개로 원자화
+- [x] vault/ 옵시디언 제텔카스텐 노트 210여 개로 원자화 (기초 실무 + 수학/ML/DL 이론 레이어 + 관측성·운영 레이어)
+- [x] 구축기 v1.0(EP02~20, 단일 노드) → v1.1(EP19~22, 전사 확대) → v2.0(EP01~13, 멀티에이전트·멀티노드) 시리즈 집필
+- [x] GPU 없는 Windows 11 PC에서 CPU로 스택 재현 (docs/05)
 - [ ] Stage 1~7 실습 코드/스크립트 추가
 - [ ] 실제 하드웨어에서 벤치마크한 tok/s 수치로 7장 표 업데이트

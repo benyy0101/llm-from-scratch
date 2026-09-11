@@ -16,7 +16,7 @@ tags: [moc]
 - [[양자화]] → [[PTQ와 QAT]] · [[스케일과 제로포인트]] → [[GGUF]] · [[AWQ]] · [[GPTQ]] · [[FP8]]
 - [[RAG]] → [[청킹]] · [[임베딩과 벡터DB]] · [[하이브리드 검색]] · [[리랭커]] · [[환각]]
 - [[폐쇄망]] → [[표준 아키텍처]] · [[체크섬]]
-- [[GPU]] → [[VRAM]] → [[GPU 선택]] → [[DGX 멀티노드 아키텍처]]
+- [[GPU]] → [[VRAM]] → [[메모리 대역폭]] → [[GPU 선택]] → [[DGX 멀티노드 아키텍처]]
 - [[데몬]]
 
 ## 수학 기초
@@ -68,6 +68,10 @@ tags: [moc]
 - [[멀티턴과 멀티에이전트 (구분)]] — "몇 번 대화하나"와 "몇 명이 일하나"는 다른 축이라는 구분
 - [[에이전트 프레임워크 선택 기준]] — 헤르메스(완성품+가드레일) vs LangGraph(직접 구축) 중 무엇을 고를지의 종합 판단
 - [[Cline]] · [[Continue.dev]] — 이 루프를 실제 코딩 작업에 적용한 오픈소스 클라이언트 두 갈래
+- [[Aider]] — 같은 목적을 IDE 확장 대신 터미널·git-native 방식으로 구현한 대안
+- [[OpenHands와 SWE-agent]] · [[SWE-bench]] — 사람 개입 없는 완전 자율 이슈 해결을 목표로 하는 연구 계보 에이전트와 그 벤치마크
+- [[멀티에이전트 프레임워크 (AutoGen·CrewAI)]] — LangGraph의 명시적 그래프 대신 대화형·역할형 추상화로 멀티에이전트를 조율하는 라이브러리
+- [[스캐폴드 효과 (에이전트-모델 궁합)]] — "어떤 모델이 좋은가"가 아니라 "어떤 모델+에이전트 조합이 좋은가"를 다루는 최신 연구
 - [[ACP (Agent Client Protocol)]] — 에이전트를 여러 에디터에 동시 통합하는 표준 프로토콜(MCP의 자매 개념)
 - [[Hermes Agent]] — 코딩 에이전트를 포함해 멀티에이전트·영속 메모리·음성까지 아우르는 개인 AI 운영체제형 플랫폼
 
@@ -107,7 +111,7 @@ tags: [moc]
 
 ## 서빙 엔진 / 도구
 - [[Ollama]] · [[vLLM]] · [[LM Studio]] · [[GPT4All]] · [[Open WebUI]] · [[llama.cpp]] · [[SGLang]] · [[TensorRT-LLM]] · [[Hugging Face TGI]] · [[LocalAI]] · [[NVIDIA NIM]]
-- [[LiteLLM]] (API 게이트웨이) · [[nginx]] (리버스 프록시) · [[Podman]] (컨테이너 런타임) · [[Continue.dev]] · [[Cline]] · [[Hermes Agent]] (코딩 어시스턴트 활용 사례) · [[faster-whisper]] (Hermes의 로컬 STT) · [[Qdrant]] (벡터DB) · [[RHEL 9]] (운영체제)
+- [[LiteLLM]] (API 게이트웨이) · [[nginx]] (리버스 프록시) · [[Podman]] (컨테이너 런타임) · [[Continue.dev]] · [[Cline]] · [[Aider]] · [[OpenHands와 SWE-agent]] · [[Hermes Agent]] (코딩 어시스턴트 활용 사례) · [[faster-whisper]] (Hermes의 로컬 STT) · [[Qdrant]] (벡터DB) · [[RHEL 9]] (운영체제)
 
 ## 모델
 - [[Qwen]] · [[Llama (모델)]] · [[Gemma]] · [[Mistral]] · [[EXAONE]] · [[HyperCLOVA X]] · [[SOLAR]] · [[Midm 2.0]]
